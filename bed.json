@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "name" : "Bed",
+        "price": 200,
+        "image_url": "assets/img/bed/bed1.png" 
+    },
+    {
+        "id": 2,
+        "name" : "Bed",
+        "price": 200,
+        "image_url": "assets/img/bed/bed2.png" 
+    },
+    {
+        "id": 3,
+        "name" : "Bed",
+        "price": 200,
+        "image_url": "assets/img/bed/bed3.png" 
+    },
+    {
+        "id": 4,
+        "name" : "Bed",
+        "price": 200,
+        "image_url": "assets/img/bed/bed4.png" 
+    },
+    {
+        "id": 5,
+        "name" : "Bed",
+        "price": 200,
+        "image_url": "assets/img/bed/bed5.png" 
+    },
+    {
+        "id": 6,
+        "name" : "Bed",
+        "price": 200,
+        "image_url": "assets/img/bed/bed6.png" 
+    },
+    {
+        "id": 7,
+        "name" : "Bed",
+        "price": 200,
+        "image_url": "assets/img/bed/bed7.png" 
+    },
+    {
+        "id": 8,
+        "name" : "Bed",
+        "price": 200,
+        "image_url": "assets/img/bed/bed8.png" 
+    }
+  
+]

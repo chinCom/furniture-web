@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "table",
+        "price": 200,
+        "image_url": "assets/img/tables/2-2-table-png-file.png"
+    },
+    {
+        "id": 2,
+        "name": "table",
+        "price": 200,
+        "image_url": "assets/img/tables/3-2-table-png-picture.png"
+    },
+    {
+        "id": 3,
+        "name": "table",
+        "price": 200,
+        "image_url": "assets/img/tables/4-2-table-png-clipart.png"
+    },
+    {
+        "id": 4,
+        "name": "table",
+        "price": 200,
+        "image_url": "assets/img/tables/5-2-table-png-hd.png"
+    },
+    {
+        "id": 5,
+        "name": "table",
+        "price": 200,
+        "image_url": "assets/img/tables/7-2-table-high-quality-png.png"
+    },
+    {
+        "id": 6,
+        "name": "table",
+        "price": 200,
+        "image_url": "assets/img/tables/8-2-table-picture.png"
+    },
+    {
+        "id": 7,
+        "name": "table",
+        "price": 200,
+        "image_url": "assets/img/tables/9-2-table-download-png.png"
+    },
+    {
+        "id": 8,
+        "name": "table",
+        "price": 200,
+        "image_url": "assets/img/tables/11-2-table-png.png"
+    }
+]

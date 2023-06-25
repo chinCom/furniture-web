@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Furniture</title>
+
+    <script>
+        (function () {
+
+            // JavaScript snippet handling Dark/Light mode switching
+
+            const getStoredTheme = () => localStorage.getItem('theme');
+            const setStoredTheme = theme => localStorage.setItem('theme', theme);
+            const forcedTheme = document.documentElement.getAttribute('data-bss-forced-theme');
+
+            const getPreferredTheme = () => {
+
+                if (forcedTheme) return forcedTheme;
+
+                const storedTheme = getStoredTheme();
+                if (storedTheme) {
+                    return storedTheme;
+                }
+
+                const pageTheme = document.documentElement.getAttribute('data-bs-theme');
+
+                if (pageTheme) {
+                    return pageTheme;
+                }
+
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+
+            const setTheme = theme => {
+                if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.setAttribute('data-bs-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-bs-theme', theme);
+                }
+            }
+
+            setTheme(getPreferredTheme());
+
+            const showActiveTheme = (theme, focus = false) => {
+                const themeSwitchers = [].slice.call(document.querySelectorAll('.theme-switcher'));
+
+                if (!themeSwitchers.length) return;
+
+                for (const themeSwitcher of themeSwitchers) {
+
+                    const themeSwitcherText = document.querySelector('#theme-text');
+                    const activeThemeIcon = document.querySelector('.theme-icon-active use');
+                    const btnToActive = document.querySelector('[data-bs-theme-value="' + theme + '"]');
+
+                    document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+                        element.classList.remove('active');
+                        element.setAttribute('aria-pressed', 'false');
+                    });
+
+                    btnToActive.classList.add('active');
+                    btnToActive.setAttribute('aria-pressed', 'true');
+                }
+            }
+
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                const storedTheme = getStoredTheme();
+                if (storedTheme !== 'light' && storedTheme !== 'dark') {
+                    setTheme(getPreferredTheme());
+                }
+            });
+
+            window.addEventListener('DOMContentLoaded', () => {
+                showActiveTheme(getPreferredTheme());
+
+                document.querySelectorAll('[data-bs-theme-value]')
+                    .forEach(toggle => {
+                        toggle.addEventListener('click', () => {
+                            const theme = toggle.getAttribute('data-bs-theme-value');
+                            setStoredTheme(theme);
+                            setTheme(theme);
+                            showActiveTheme(theme);
+                        })
+                    })
+            });
+        })();
+    </script>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&amp;display=swap">
+    <link rel="stylesheet" href="assets/css/aos.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/Features-Image-images.css">
+    <link rel="stylesheet" href="assets/css/Lightbox-Gallery-baguetteBox.min.css">
+    <link rel="stylesheet" href="assets/css/Navbar-Centered-Links-icons.css">
+    <link rel="stylesheet" href="assets/css/Responsive-Image-Grid.css">
+    <link rel="shortcut icon" href="https://www.google.com/s2/favicons?domain=www.google.com">
+    <!-- link font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- link css custom -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <nav class="navbar navbar-light navbar-expand-md py-3">
+                <div class="container"><a class="navbar-brand d-flex align-items-center"
+                        href="#"><span><strong>Zing</strong><span style="color: var(--bs-yellow);"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                                    viewBox="0 0 16 16" class="bi bi-droplet-fill">
+                                    <path
+                                        d="M8 16a6 6 0 0 0 6-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.75 2.503 8 0c0 0-6 5.686-6 10a6 6 0 0 0 6 6ZM6.646 4.646l.708.708c-.29.29-1.128 1.311-1.907 2.87l-.894-.448c.82-1.641 1.717-2.753 2.093-3.13Z">
+                                    </path>
+                                </svg></span></span></a><button data-bs-toggle="collapse" class="navbar-toggler"
+                        data-bs-target="#navcol-3"><span class="visually-hidden">Toggle navigation</span><span
+                            class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navcol-3">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#about-us">About us</a>
+                            </li>
+                            <li class="nav-item d-lg-flex align-items-lg-center">
+                                <div class="nav-item dropdown" style="color: var(--bs-tertiary-bg);"><a
+                                        class="dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" href="#"
+                                        style="color: var(--bs-navbar-brand-hover-color);">Products</a>
+                                    <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a
+                                            class="dropdown-item" href="#">Second Item</a><a class="dropdown-item"
+                                            href="#">Third Item</a></div>
+                                </div>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="#">Testimonial</a></li>
+                            <li class="nav-item"></li>
+                        </ul>
+                        <div class="theme-switcher dropdown"><a class="dropdown-toggle" aria-expanded="false"
+                                data-bs-toggle="dropdown" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                                    height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-sun-fill mb-1">
+                                    <path
+                                        d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z">
+                                    </path>
+                                </svg></a>
+                            <div class="dropdown-menu"><a class="dropdown-item d-flex align-items-center" href="#"
+                                    data-bs-theme-value="light"><svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                                        height="1em" fill="currentColor" viewBox="0 0 16 16"
+                                        class="bi bi-sun-fill opacity-50 me-2">
+                                        <path
+                                            d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z">
+                                        </path>
+                                    </svg>Light</a><a class="dropdown-item d-flex align-items-center" href="#"
+                                    data-bs-theme-value="dark"><svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                                        height="1em" fill="currentColor" viewBox="0 0 16 16"
+                                        class="bi bi-moon-stars-fill opacity-50 me-2">
+                                        <path
+                                            d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z">
+                                        </path>
+                                        <path
+                                            d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z">
+                                        </path>
+                                    </svg>Dark</a><a class="dropdown-item d-flex align-items-center" href="#"
+                                    data-bs-theme-value="auto"><svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                                        height="1em" fill="currentColor" viewBox="0 0 16 16"
+                                        class="bi bi-circle-half opacity-50 me-2">
+                                        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+                                    </svg>Auto</a></div>
+                        </div>
+                        <a class="nav-link" href="#"
+                            style="margin-left: 11px;margin-right: 11px;padding-top: 6px;padding-bottom: 6px;padding-left: 9px;padding-right: 9px;">
+                            Contact Us
+                        </a>
+                        <div>
+                            <a class="btn btn-primary" data-bs-toggle="collapse" aria-expanded="false"
+                                aria-controls="collapse-2" href="#collapse-2" role="button">My Products<i
+                                    class="fa fa-shopping-cart" style="font-size: 22px;"></i><span
+                                    style="padding-left: 4px;padding-right: 4px;background: var(--bs-orange);border-radius: 40px;color: var(--bs-body-bg);padding-top: 0px;padding-bottom: 0px;">
+                                    0
+                                </span>
+                            </a>
+                            <div id="collapse-2" class="collapse"
+                                style="position: absolute;transform: translate(-159px);width: 328.85px;z-index: 2;">
+                                <!-- list item -->
+                                <div id="cart-list">
+                                    
+                                </div>
+                                <!-- price total -->
+                                <div class="row d-lg-flex">
+                                    <div class="col d-flex d-sm-flex d-lg-flex justify-content-end justify-content-sm-end"
+                                        style="background: var(--bs-orange);border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;">
+                                        <p style="color: var(--bs-tertiary-bg);font-weight: bold;font-style: italic;"
+                                            id="total-price">
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="container tada animated" style="margin-bottom: 26px;">
+            <h1 class="text-center"
+                style="--bs-body-font-weight: bold;font-size: 61.88px;font-family: 'Source Sans Pro', sans-serif;margin-top: 47px;">
+                <strong>Amazing furniture for </strong><br><strong>your home</strong>
+            </h1>
+            <div class="row d-lg-flex justify-content-lg-center">
+                <div class="col-lg-7 text-center d-lg-flex">
+                    <p style="font-family: 'Source Sans Pro', sans-serif;">We think the chair is the most important
+                        piece of furniture in your home. Because if you love the chair you are sitting in chances are
+                        you will love the rest of the room.</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" style="margin-top: 27px;margin-bottom: 27px;">
+            <div class="row d-xl-flex justify-content-lg-center justify-content-xl-center"
+                style="position: relative;transform: translateX(21px) translateY(-33px) scale(1.59);transform-origin: bottom;width: 50%;">
+                <div class="col-12 col-md-9 col-lg-6 col-xl-5 offset-0 offset-sm-4 offset-md-6 offset-lg-7 offset-xl-7 d-xl-flex justify-content-xl-center"
+                    style="position: absolute;"><input type="text" placeholder="Search your product"
+                        style="padding-top: 13px;padding-bottom: 13px;padding-left: 18px;padding-right: 18px;transform: perspective(0px) scale(0.70);opacity: 1;border-style: solid;">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col"><img src="assets/img/unsplash_IH7wPsjwomc.png" style="width: 100%;"></div>
+            </div>
+        </div>
+        <div class="container" id="about-us" style="margin-bottom: 30px;">
+            <div class="row">
+                <div class="col-xl-4">
+                    <h1 style="font-family: 'Source Sans Pro', sans-serif;font-weight: bold;">About us</h1>
+                    <p style="font-family: 'Source Sans Pro', sans-serif;">Comfort is key and how you feel about your
+                        chair will affect how you feel and your mood.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col d-grid d-sm-grid d-xl-grid">
+                    <div class="row flex-wrap">
+                        <div class="col"><span
+                                style="font-size: 51px;font-weight: bold;font-family: 'Source Sans Pro', sans-serif;color: var(--bs-orange);">1</span>
+                            <p style="font-size: 21px;"><strong>Mission</strong></p>
+                            <p style="font-family: 'Source Sans Pro', sans-serif;">It makes people at ease and feel like
+                                they want to open up.</p>
+                        </div>
+                        <div class="col"><span
+                                style="font-size: 51px;font-weight: bold;font-family: 'Source Sans Pro', sans-serif;color: var(--bs-orange);">2</span>
+                            <p style="font-size: 21px;"><strong>Motivation</strong></p>
+                            <p style="font-family: 'Source Sans Pro', sans-serif;">The perfect mix of art that
+                                complements the room's style.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><span
+                                style="font-size: 51px;font-weight: bold;font-family: 'Source Sans Pro', sans-serif;color: var(--bs-orange);">3</span>
+                            <p style="font-size: 21px;"><strong>Vision</strong></p>
+                            <p style="font-family: 'Source Sans Pro', sans-serif;">Along with a healthy dose of negative
+                                space to give the eyes spots to rest.</p>
+                        </div>
+                        <div class="col"><span
+                                style="font-size: 51px;font-weight: bold;font-family: 'Source Sans Pro', sans-serif;color: var(--bs-orange);">4</span>
+                            <p style="font-size: 21px;"><strong>Goal</strong></p>
+                            <p style="font-family: 'Source Sans Pro', sans-serif;">Art that has meaning to the people
+                                who live in the space,</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col d-grid">
+                    <div
+                        class="row d-flex flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row">
+                        <div class="col"><img src="assets/img/Rectangle%205.png" style="width: 100%;"></div>
+                        <div class="col" style="transform: translateY(-55px);"><img
+                                src="assets/img/Rectangle%206(1).png" style="width: 100%;"></div>
+                    </div>
+                    <div class="row flex-md-row" style="margin-top: 15px;">
+                        <div class="col"><img src="assets/img/Rectangle%208.png" style="width: 100%;"></div>
+                        <div class="col" style="transform: translateY(-143px);"><img src="assets/img/Rectangle%207.png"
+                                style="width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- section product -->
+        <div class="container">
+            <section class="photo-gallery py-4 py-xl-5">
+                <div class="container">
+                    <div class="row mb-5">
+                        <div class="col-md-8 col-xl-6 text-center mx-auto">
+                            <h1
+                                style="font-family: 'Source Sans Pro', sans-serif;font-weight: bold;--bs-body-font-weight: 700;">
+                                Products</h1>
+                            <div class="row">
+                                <div class="col">
+                                    <nav class="navbar navbar-light navbar-expand-md d-sm-flex py-3">
+                                        <div class="container"><button data-bs-toggle="collapse" class="navbar-toggler"
+                                                data-bs-target="#navcol-1"><span class="visually-hidden">Toggle
+                                                    navigation</span><span class="navbar-toggler-icon"></span></button>
+                                            <div class="collapse navbar-collapse" id="navcol-1">
+                                                <ul class="navbar-nav mx-auto">
+                                                    <li class="nav-item"><a class="nav-link active" href="#products"
+                                                            style="color: var(--bs-orange);font-weight: bold;"
+                                                            id="all-furniture-link">All</a>
+                                                    </li>
+                                                    <li class="nav-item"><a class="nav-link" href="#products"
+                                                            id="chair-link">Chair</a>
+                                                    </li>
+                                                    <li class="nav-item"><a class="nav-link" href="#products"
+                                                            id="tables-link">Table</a></li>
+                                                    <li class="nav-item"><a class="nav-link" href="#products"
+                                                            id="bed-link">Bed</a></li>
+                                                    <li class="nav-item"><a class="nav-link" href="#products"
+                                                            id="closet-link">Closet</a></li>
+                                                    <li class="nav-item"><a class="nav-link" href="#products"
+                                                            id="sofa-link">Sofa</a></li>
+                                                    <li class="nav-item"><a class="nav-link" href="#products"
+                                                            id="cabinet-link">Cabinet</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row gx-1 d-flex d-md-flex justify-content-between justify-content-sm-between justify-content-md-between justify-content-lg-between justify-content-xl-around photos"
+                        data-bss-baguettebox="" id="products">
+                        <!-- fetch products in here -->
+                    </div>
+                </div>
+                <!-- Learn more -->
+                <div id="accordion-1" class="accordion" role="tablist">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" role="tab">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#accordion-1 .item-1" aria-expanded="true"
+                                aria-controls="accordion-1 .item-1" id="learn-more-btn">Learn More...</button>
+                        </h2>
+                        <div class="accordion-collapse collapse show item-1" role="tabpanel"
+                            data-bs-parent="#accordion-1">
+                            <div class="accordion-body">
+                                <div class="row gx-1 d-flex d-md-flex justify-content-between justify-content-sm-between justify-content-md-between justify-content-lg-between justify-content-xl-around photos"
+                                    data-bss-baguettebox id="learn-more-products">
+                                    <!-- fetch products in here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="container">
+            <div class="row d-grid d-sm-grid d-md-flex" style="background: #112B3C;">
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <h1 style="font-weight: bold;color: var(--bs-body-bg);">What do customers say...</h1>
+                        </div>
+                    </div>
+                    <div class="row d-sm-flex d-lg-flex justify-content-lg-center">
+                        <div class="col-12 col-sm-12 col-md-12 offset-lg-0 d-flex d-sm-flex d-md-flex d-lg-flex justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center"
+                            style="padding-top: 58px;padding-bottom: 28px;"><img src="assets/img/Image.png"
+                                style="width: 70%;"></div>
+                    </div>
+                </div>
+                <div class="col"
+                    style="padding-top: 101px;padding-bottom: 101px;padding-left: 20px;padding-right: 20px;"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                        viewBox="0 0 16 16" class="bi bi-quote"
+                        style="font-size: 102px;padding-bottom: 0px;color: var(--bs-orange);">
+                        <path
+                            d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z">
+                        </path>
+                    </svg>
+                    <h1 style="font-family: 'Source Sans Pro', sans-serif;font-weight: bold;color: var(--bs-body-bg);">
+                        Amazing service</h1>
+                    <p style="font-family: 'Source Sans Pro', sans-serif;color: var(--bs-body-bg);">Since the online
+                        marketplace can be a scary place, the presence of customer reviews on an online store helps
+                        establish authenticity, confidence, and trust among shoppers. </p>
+                    <p style="font-family: 'Source Sans Pro', sans-serif;color: var(--bs-body-bg);"><strong>Wade
+                            Warren</strong><br>Doctor</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <section class="d-grid position-relative py-4 py-xl-5">
+                <div class="container position-relative">
+                    <div class="row mb-5">
+                        <div class="col-md-8 col-xl-6 text-center mx-auto">
+                            <h2>Contact us</h2>
+                            <p class="w-lg-50">Curae hendrerit donec commodo hendrerit egestas tempus, turpis facilisis
+                                nostra nunc. Vestibulum dui eget ultrices.</p>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-9 col-lg-7 col-xl-6">
+                            <div class="row">
+                                <div class="col"><img src="assets/img/Rectangle%205(1).png" style="width: 100%;"></div>
+                                <div class="col"><img src="assets/img/Rectangle%206(2).png"
+                                        style="transform: translateY(-33px);width: 100%;"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col"><img src="assets/img/Rectangle%208(1).png"
+                                        style="transform: translateY(25px);width: 100%;"></div>
+                                <div class="col"><img src="assets/img/Rectangle%207(1).png"
+                                        style="transform: translateY(-14px);width: 100%;margin-top: 0px;"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-5 col-xl-4">
+                            <div>
+                                <form class="p-3 p-xl-4" method="post">
+                                    <div class="mb-3"><input class="form-control" type="text" id="name-1" name="name"
+                                            placeholder="Name"></div>
+                                    <div class="mb-3"><input class="form-control" type="email" id="email-1" name="email"
+                                            placeholder="Email"></div>
+                                    <div class="mb-3"><textarea class="form-control" id="message-1" name="message"
+                                            rows="6" placeholder="Message"></textarea></div>
+                                    <div><button class="btn btn-primary d-block w-100" type="submit">Send </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="container">
+            <footer class="text-center">
+                <div class="container text-muted py-4 py-lg-5">
+                    <ul class="list-inline">
+                        <li class="list-inline-item me-4"><a class="link-secondary" href="#">Web design</a></li>
+                        <li class="list-inline-item me-4"><a class="link-secondary" href="#">Development</a></li>
+                        <li class="list-inline-item"><a class="link-secondary" href="#">Hosting</a></li>
+                    </ul>
+                    <ul class="list-inline">
+                        <li class="list-inline-item me-4"><svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                                height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-facebook">
+                                <path
+                                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z">
+                                </path>
+                            </svg></li>
+                        <li class="list-inline-item me-4"><svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                                height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-twitter">
+                                <path
+                                    d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z">
+                                </path>
+                            </svg></li>
+                        <li class="list-inline-item"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                fill="currentColor" viewBox="0 0 16 16" class="bi bi-instagram">
+                                <path
+                                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z">
+                                </path>
+                            </svg></li>
+                    </ul>
+                    <p class="mb-0">Copyright © 2023 Brand</p>
+                </div>
+            </footer>
+        </div>
+    </section>
+
+
+    <style>
+
+    </style>
+
+    <script src="index.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/aos.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/Lightbox-Gallery-baguetteBox.min.js"></script>
+    <script src="assets/js/Lightbox-Gallery.js"></script>
+    <!-- link custom fetch api -->
+</body>
+
+</html>

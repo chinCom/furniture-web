@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "name" : "Chair",
+        "price": 200,
+        "image_url": "assets/img/3-chair-png-image.png" 
+    },
+    {
+        "id": 2,
+        "name" : "Chair",
+        "price": 200,
+        "image_url": "assets/img/4-office-chair-png-image.png" 
+    },
+    {
+        "id": 3,
+        "name" : "Chair",
+        "price": 200,
+        "image_url": "assets/img/7-chair-png-image.png" 
+    },
+    {
+        "id": 4,
+        "name" : "Chair",
+        "price": 200,
+        "image_url": "assets/img/16-chair-png-image.png" 
+    },
+    {
+        "id": 5,
+        "name" : "Chair",
+        "price": 200,
+        "image_url": "assets/img/17-chair-png-image.png" 
+    },
+    {
+        "id": 6,
+        "name" : "Chair",
+        "price": 200,
+        "image_url": "assets/img/20-chair-png-image.png" 
+    },
+    {
+        "id": 7,
+        "name" : "Chair",
+        "price": 200,
+        "image_url": "assets/img/26-office-chair-png-image.png" 
+    },
+    {
+        "id": 8,
+        "name" : "Chair",
+        "price": 200,
+        "image_url": "assets/img/40-chair-png-image.png" 
+    }
+  
+]

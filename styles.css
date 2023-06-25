@@ -1,0 +1,7 @@
+/* add hover to icon, when hover change color and size */
+.icon:hover {
+  color: #f1f1f1;
+  transform: scale(1.2);
+  /* make more smooth */
+  transition: 0.3s;
+}

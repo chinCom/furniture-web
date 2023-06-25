@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "name" : "Closet",
+        "price": 200,
+        "image_url": "assets/img/closet/closet1.png" 
+    },
+    {
+        "id": 2,
+        "name" : "Closet",
+        "price": 200,
+        "image_url": "assets/img/closet/closet2.png" 
+    },
+    {
+        "id": 3,
+        "name" : "Closet",
+        "price": 200,
+        "image_url": "assets/img/closet/closet3.png" 
+    },
+    {
+        "id": 4,
+        "name" : "Closet",
+        "price": 200,
+        "image_url": "assets/img/closet/closet4.png" 
+    },
+    {
+        "id": 5,
+        "name" : "Closet",
+        "price": 200,
+        "image_url": "assets/img/closet/closet5.png" 
+    },
+    {
+        "id": 6,
+        "name" : "Closet",
+        "price": 200,
+        "image_url": "assets/img/closet/closet6.png" 
+    },
+    {
+        "id": 7,
+        "name" : "Closet",
+        "price": 200,
+        "image_url": "assets/img/closet/closet7.png" 
+    },
+    {
+        "id": 8,
+        "name" : "Closet",
+        "price": 200,
+        "image_url": "assets/img/closet/closet8.png" 
+    }
+  
+]

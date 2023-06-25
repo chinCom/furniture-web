@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "name" : "Bed",
+        "price": 200,
+        "image_url": "assets/img/bed/bed1.png" 
+    },
+    {
+        "id": 2,
+        "name" : "Chair",
+        "price": 200,
+        "image_url": "assets/img/3-chair-png-image.png" 
+    },
+    {
+        "id": 3,
+        "name" : "Chair",
+        "price": 200,
+        "image_url": "assets/img/4-office-chair-png-image.png" 
+    },
+    {
+        "id": 4,
+        "name" : "Sofa",
+        "price": 200,
+        "image_url": "assets/img/sofa/sofa4.png" 
+    },
+    {
+        "id": 5,
+        "name" : "tables",
+        "price": 200,
+        "image_url": "assets/img/tables/8-2-table-picture.png" 
+    },
+    {
+        "id": 6,
+        "name" : "Sofa White",
+        "price": 200,
+        "image_url": "assets/img/SofaWhite.png" 
+    },
+    {
+        "id": 7,
+        "name" : "Cabinet",
+        "price": 200,
+        "image_url": "assets/img/cabinet/pngwing.com(8).png" 
+    },
+    {
+        "id": 8,
+        "name" : "Table",
+        "price": 200,
+        "image_url": "assets/img/tables/7-2-table-high-quality-png.png" 
+    }
+  
+]

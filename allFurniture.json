@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "name" : "Chair",
+        "price": 200,
+        "image_url": "assets/img/Chair.png" 
+    },
+    {
+        "id": 2,
+        "name" : "Chair 2",
+        "price": 300,
+        "image_url": "assets/img/Chair2.png" 
+    },
+    {
+        "id": 3,
+        "name" : "Bedside table",
+        "price": 900,
+        "image_url": "assets/img/BedsideTable.png" 
+    },
+    {
+        "id": 4,
+        "name" : "Sofa black",
+        "price": 400,
+        "image_url": "assets/img/SofaBlack.png" 
+    },
+    {
+        "id": 5,
+        "name" : "Sofa white",
+        "price": 400,
+        "image_url": "assets/img/SofaWhite.png" 
+    },
+    {
+        "id": 6,
+        "name" : "Table lamp",
+        "price": 150,
+        "image_url": "assets/img/TableLamp.png" 
+    },
+    {
+        "id": 7,
+        "name" : "Tea table",
+        "price": 800,
+        "image_url": "assets/img/TeaTable.png" 
+    },
+    {
+        "id": 8,
+        "name" : "Stool",
+        "price": 800,
+        "image_url": "assets/img/Stool.png" 
+    }
+
+]

@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Cabinet",
+        "price": 200,
+        "image_url": "assets/img/cabinet/pngwing.com(1).png"
+    },
+    {
+        "id": 2,
+        "name": "Cabinet",
+        "price": 200,
+        "image_url": "assets/img/cabinet/pngwing.com(2).png"
+    },
+    {
+        "id": 3,
+        "name": "Cabinet",
+        "price": 200,
+        "image_url": "assets/img/cabinet/pngwing.com(3).png"
+    },
+    {
+        "id": 4,
+        "name": "Cabinet",
+        "price": 200,
+        "image_url": "assets/img/cabinet/pngwing.com(4).png"
+    },
+    {
+        "id": 5,
+        "name": "Cabinet",
+        "price": 200,
+        "image_url": "assets/img/cabinet/pngwing.com(5).png"
+    },
+    {
+        "id": 6,
+        "name": "Cabinet",
+        "price": 200,
+        "image_url": "assets/img/cabinet/pngwing.com(6).png"
+    },
+    {
+        "id": 7,
+        "name": "Cabinet",
+        "price": 200,
+        "image_url": "assets/img/cabinet/pngwing.com(7).png"
+    },
+    {
+        "id": 8,
+        "name": "Cabinet",
+        "price": 200,
+        "image_url": "assets/img/cabinet/pngwing.com(8).png"
+    }
+]
